@@ -40,7 +40,7 @@ int main(void)
 			PORTB |= (1<<5);
 			PORTB |= (1<<4);
 			
-			//Avançar para o estado em que a contagem de 5 segundos é feita;
+			//Avançar para o estado em que a contagem de 5 segundos é feita
 			estado = 2;
 		}
 		if(estado == 2)
@@ -53,11 +53,11 @@ int main(void)
 				estado = 3;
 			}
 		}
-		if(estado == 3);
+		if(estado == 3)
 		{
 			//Desligar K2 e ligar K3
-			PORTB &= ~(1<<4);
-			PORTB |= (1<<3);
+			PORTB &= ~(1<<4);//K2
+			PORTB |= (1<<3);//K3
 			estado = 4;
 		}
 		if(estado == 4)
@@ -71,24 +71,5 @@ int main(void)
 		{
 			estado = 0;
 		}
-		/*
-		if(!(PINB & (1<<2))) //S1
-		{
-			PORTB |= (1<<5); //K1
-			PORTB |= (1<<4); //K2
-			_delay_ms(5000);
-			
-			//Desligar K2 e ligar K3
-			PORTB &= ~(1<<4);
-			PORTB |= (1<<3);
-			
-		}
-		if(!(PINB & (1<<1))) //S0
-		{
-			PORTB &= ~(1<<3); //Zero
-			PORTB &= ~(1<<4); //Zero
-			PORTB &= ~(1<<5); //Zero
-		}
-		*/
     }
 }
